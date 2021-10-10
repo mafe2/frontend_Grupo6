@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Verificar Trabajador</title>
+	<meta charset="utf-8"/>
+	<link rel="stylesheet" href="css/random.css">
+    <script>
+        function countDown(){
+             // Obtener el tiempo inicial
+            var time = document.getElementById("Time");
+            
+             // Obtenga la hora digital con id como etiqueta de tiempo
+            if(time.innerHTML == 0){
+                 // Borra el tiempo cuando es igual a 0 y falta algo mas pero aja 
+               /* Text="Gracias por confirmar";*/
+            }else{
+                time.innerHTML = time.innerHTML-1;
+            }
+        }
+         // Llamar una vez cada 1000 milisegundos
+        window.setInterval("countDown()",1000);
+    </script>
+    
+</head>
+<body>
+    
+<form action="#" target="" method="POST" name="random">
+
+	<label for="nombre">Usuario</label>
+	<input type="text" name="nombre" id="Nombre" placeholder=""/>
+
+	<label for="mensaje">Escribe el codigo</label>
+	<img src="https://www.pandasecurity.com/en/mediacenter/src/uploads/2014/09/avoid-captcha.jpg" alt="Resolver captcha" width="150" height="60"/>
+	
+    <input type="text" name="codigo" id="Codigo" placeholder="" /><br>
+
+	<input type="submit" name="aceptar" value="Aceptar" style="float: right;">
+    <p id="Time" >30</p>
+	
+</form>
+
+</body>
+</html>

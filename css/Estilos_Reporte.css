@@ -1,0 +1,461 @@
+ /*se aplican los estilos para pantallas que cumplan estas 
+  resoluciones se aplican estas reglas*/
+  @media screen and (min-width:1501px) {
+    *{/* margenes*/
+    margin:0;
+    padding:0;
+    }
+    header{
+        background-color: #5E8F7F;
+        height: 20%;
+        border-radius: 0.5em;
+        padding:0.5em;
+        font-size: xx-large;
+        margin: 5.1em;
+    }
+    #contenido{
+        height: 15%;/*lineas*/
+        background-color: #888DA7;
+        padding:0.5em;
+    }
+    p{
+        color: #184E77;
+        font-size: x-large;
+        text-align:center;
+    }
+    b{
+        color: #020608;
+        font-size: medium;
+    }
+    legend{
+        color: #184E77;
+        font-size: x-large;
+    }
+    section{
+        height: 10%;
+        width: 60%;
+        background-color: #9C7A97;
+        padding:0.5em;
+    }
+    aside{
+        height: 16vh;
+        width: 85%;
+        /*background-color: #34a0a4;*/
+        padding:0.1em;
+        float:right;
+        text-align:initial;
+    }
+    sidebar{
+        height: 30%;
+        width: 50%;
+        background-color: #f8f6fa;
+        padding:0;
+        float:left;
+    }
+    #asideinfo{
+        height: 20%;
+        width: 50%;
+        background-color: #f8f6fa;
+        padding:0;
+        float:right;
+        text-align:initial;
+    }
+    img{
+        width: 150px;
+        height: 150px;
+    }
+    #contenedor{
+        width: 80%;/*de la pagina*/
+        background-color: #303633;
+        height: 20%;/*lineas*/
+    }
+    nav{
+        background-color: #7EA2AA;
+        height: 20%;/*lineas*/
+        margin: 0.1em;
+        text-align: center;
+        border-radius: 1em;
+        padding: 0.5em;
+        margin: 0.5em;
+        font-size: xx-small;
+        orientation: vertical;
+    }
+    footer{
+        text-align: center;
+        height: 40%;
+        background-color: rgb(236, 226, 134);
+        border-radius: 1em;
+        padding: 0.1em;
+        margin: 0.1em;
+        font-size: x-small;
+    }
+    #botones{
+        /*background-color: #7EA2AA;*/
+        height: 10%;/*lineas*/
+        margin: 0.1em;
+        text-align: center;
+    }
+
+    .articulo{
+        width: 90%;
+        height: 30%;
+        background-color: aliceblue;
+        margin: 0.2em; 
+        text-align:right;  
+    }
+
+    #contenedor nav ul li{
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        display: inline;
+    }
+    .button1, .button2, .button3, .button4, .button5 {
+        color: white;
+        background-color: #184e77;
+        text-align: center;
+        padding: 4px;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    .button1:hover {
+        background-color: cadetblue;
+    }
+
+    .button2:hover {
+        background-color: cadetblue;
+    }
+
+    .button3:hover {
+        background-color: cadetblue;
+    }
+
+    .button4:hover {
+        background-color: cadetblue;
+    }
+    .button5:hover {
+        background-color: cadetblue;
+    }
+
+    .button1:active {
+        background-color: cornflowerblue;
+    }
+
+    .button2:active {
+        background-color: cornflowerblue;
+    }
+
+    .button3:active {
+        background-color: cornflowerblue;
+    }
+
+    .button4:active {
+        background-color: cornflowerblue;
+    }
+    .button5:active {
+        background-color: cornflowerblue;
+    }
+}
+
+
+@media screen and (max-width:1500px) {
+    *{/* margenes*/
+        margin:0;
+        padding:0;
+        }
+        header{
+            /*background-color: #5E8F7F;*/
+            height: 20%;
+            border-radius: 1em;
+            padding:0.5em;
+            font-size: x-large;
+            margin: 5.1em;
+        }
+        #contenido{
+            height: 15%;/*lineas*/
+            background-color: #888DA7;
+            padding:0.5em;
+        }
+        p{
+            color: #184E77;
+            font-size: x-large;
+            text-align:left;
+        }
+        b{
+            color: #020608;
+            font-size: medium;
+        }
+        legend{
+            color: #184E77;
+            font-size: x-large;
+        }
+        section{
+            height: 10%;
+            width: 55%;
+            background-color: #9C7A97;
+            padding:0.5em;
+        }
+        aside{
+            height: 9vh;
+            width: 55%;
+            /*background-color: #168aad;*/
+            padding:0.5em;
+            float:right;
+            text-align:initial;
+        }
+        
+        sidebar{
+            height: 30%;
+            width: 100%;
+            background-color: #f8f6fa;
+            padding:0.5em;
+            float:left;
+        }
+        #asideinfo{
+            height: 20%;
+            width: 100%;
+            background-color: #f8f6fa;
+            padding:0.5em;
+            float:left;
+            text-align:initial;
+        }
+        img{
+            width: 100px;
+            height: 100px;
+        }
+        #contenedor{
+            width: 80%;/*de la pagina*/
+            background-color: #303633;
+            height: 20%;/*lineas*/
+        }
+        nav{
+            background-color: #7EA2AA;
+            height: 10%;/*lineas*/
+            margin: 0.1em;
+            text-align: center;
+        }
+        footer{
+            text-align: center;
+            height: 40%;
+            background-color: rgb(236, 226, 134);
+            border-radius: 1em;
+            padding: 0.1em;
+            margin: 0.1em;
+            font-size: x-small;
+        }
+        /*#botones{
+            background-color: #7EA2AA;
+            height: 10%;
+            margin: 0.1em;
+            text-align: center;
+        }*/
+    
+        .articulo{
+            width: 90%;
+            height: 30%;
+            background-color: aliceblue;
+            margin: 0.2em; 
+            text-align:right;  
+        }
+    
+        #contenedor nav ul li{
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            display: inline;
+        }
+        .button1, .button2, .button3, .button4, .button5 {
+            color: white;
+            background-color: #184e77;
+            text-align: center;
+            padding: 4px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .button1:hover {
+            background-color: cadetblue;
+        }
+
+        .button2:hover {
+            background-color: cadetblue;
+        }
+
+        .button3:hover {
+            background-color: cadetblue;
+        }
+
+        .button4:hover {
+            background-color: cadetblue;
+        }
+        .button5:hover {
+            background-color: cadetblue;
+        }
+
+        .button1:active {
+            background-color: cornflowerblue;
+        }
+
+        .button2:active {
+            background-color: cornflowerblue;
+        }
+
+        .button3:active {
+            background-color: cornflowerblue;
+        }
+
+        .button4:active {
+            background-color: cornflowerblue;
+        }
+        .button5:active {
+            background-color: cornflowerblue;
+        }
+}
+
+@media screen and (max-width:400px) {
+    *{/* margenes*/
+        margin:0;
+        padding:0;
+        }
+        header{
+            height: 20%;
+            border-radius: 1em;
+            padding:0.5em;
+            font-size: x-large;
+            margin: 5.1em;
+        }
+        #contenido{
+            height: 15%;/*lineas*/
+            background-color: #888DA7;
+            padding:0.5em;
+        }
+        p{
+            /*color: #184E77;*/
+            font-size: x-large;
+            text-align:center;
+        }
+        b{
+            color: #020608;
+            font-size: medium;
+        }
+        legend{
+            /*color: #184E77;*/
+            font-size: x-large;
+        }
+        section{
+            height: 10%;
+            width: 60%;
+            /*background-color: #9C7A97;*/
+            padding:0.5em;
+        }
+        aside{
+            height: 9vh;
+            width: 50%;
+            padding:0.5em;
+            float:left;
+            text-align:initial;
+        }
+        sidebar{
+            height: 30%;
+            width: 80%;
+            /*background-color: #f8f6fa;*/
+            padding:0.5em;
+            float:left;
+        }
+        #asideinfo{
+            height: 20%;
+            width: 80%;
+            background-color: #f8f6fa;
+            padding:0.5em;
+            float:left;
+            text-align:initial;
+        }
+        img{
+            width: 100px;
+            height: 100px;
+            float:left;
+        }
+        #contenedor{
+            width: 80%;/*de la pagina*/
+            /*background-color: #303633;*/
+            height: 20%;/*lineas*/
+        }
+        nav{
+            /*background-color: #7EA2AA;*/
+            height: 10%;/*lineas*/
+            margin: 0.1em;
+            text-align: center;
+        }
+        footer{
+            text-align: center;
+            height: 40%;
+            background-color: rgb(236, 226, 134);
+            border-radius: 1em;
+            padding: 0.1em;
+            margin: 0.1em;
+            font-size: x-small;
+        }
+        /*#botones{
+            background-color: #7EA2AA;
+            height: 10%;/*lineas
+            margin: 0.1em;
+            text-align: center;
+        }*/
+    
+        .articulo{
+            width: 90%;
+            height: 30%;
+            /*background-color: aliceblue;*/
+            margin: 0.2em; 
+            text-align:left;  
+        }
+    
+        #contenedor nav ul li{
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            display: list-item;
+        }
+        .button1, .button2, .button3, .button4, .button5 {
+            color: white;
+            background-color: #184e77;
+            text-align: center;
+            padding: 4px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .button1:hover {
+            background-color: cadetblue;
+        }
+
+        .button2:hover {
+            background-color: cadetblue;
+        }
+
+        .button3:hover {
+            background-color: cadetblue;
+        }
+
+        .button4:hover {
+            background-color: cadetblue;
+        }
+        .button5:hover {
+            background-color: cadetblue;
+        }
+
+        .button1:active {
+            background-color: cornflowerblue;
+        }
+
+        .button2:active {
+            background-color: cornflowerblue;
+        }
+
+        .button3:active {
+            background-color: cornflowerblue;
+        }
+
+        .button4:active {
+            background-color: cornflowerblue;
+        }
+        .button5:active {
+            background-color: cornflowerblue;
+        }
+   
+}

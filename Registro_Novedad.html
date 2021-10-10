@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="css/estilo_maqueta.css"> <!--enlaza a hoja de estilos-->
+   <!-- <img class="original" src="E:\MAFE\UNAB\Programacion\Modulo 3\semana 3\Sprint2 (1)\Sprint2 (1)\logo.jpg"> -->
+   <title>Registro_Novedad</title> 
+   
+    
+    
+    <!--
+    <style>
+        .button1, .button2, .button3, .button4 {
+            color: black;
+            background-color: whitesmoke;
+            text-align: center;
+            padding: 4px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .button1:hover {
+            background-color: cadetblue;
+        }
+
+        .button2:hover {
+            background-color: cadetblue;
+        }
+
+        .button3:hover {
+            background-color: cadetblue;
+        }
+
+        .button4:hover {
+            background-color: cadetblue;
+        }
+
+        .button1:active {
+            background-color: cornflowerblue;
+        }
+
+        .button2:active {
+            background-color: cornflowerblue;
+        }
+
+        .button3:active {
+            background-color: cornflowerblue;
+        }
+
+        .button4:active {
+            background-color: cornflowerblue;
+        }
+    </style>  
+    -->
+</head>
+    <body>
+        <div id="contenedor">
+            
+            <header>
+                
+                <div id="contenido">
+                    <p><img src="logo.jpg" alt="logo empresa">          
+                    Reporte de novedades </p>   
+                </div>           
+            </header>
+            <nav> <!--Opcion de barra de navegación-->
+                <button class="button4" onclick="location.href='Informe_empleados.html'"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-lines-fill" viewBox="0 0 16 16">
+                    <path d="M6 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm-5 6s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H1zM11 3.5a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 0 1h-4a.5.5 0 0 1-.5-.5zm.5 2.5a.5.5 0 0 0 0 1h4a.5.5 0 0 0 0-1h-4zm2 3a.5.5 0 0 0 0 1h2a.5.5 0 0 0 0-1h-2zm0 3a.5.5 0 0 0 0 1h2a.5.5 0 0 0 0-1h-2z"/>
+                        </svg> Generar Reporte</button> 
+                <button class="button5" onclick="location.href='index.html'"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-door-closed-fill" viewBox="0 0 16 16">
+                    <path d="M12 1a1 1 0 0 1 1 1v13h1.5a.5.5 0 0 1 0 1h-13a.5.5 0 0 1 0-1H3V2a1 1 0 0 1 1-1h8zm-2 9a1 1 0 1 0 0-2 1 1 0 0 0 0 2z"/>
+                    </svg>Cerrar Sesión</button> 
+            </nav>
+            <div id="contenido"> <!--Contenedor tabla de novedades-->
+                <section>
+                    <table class="table table-dark table-sm">
+                        <div>
+                                <legend>Registro de Novedad</legend>
+                                <p> fecha: <span id="datetime"></span> </p> 
+                        </div>
+                        <tr><td> Novedad</td>
+                            <td><select name="Novedad" id="Novedad">
+                                <option value="0">Ingreso</option>
+                                <option value="1">Almuerzo</option>
+                                <option value="2">Baño</option>
+                                <option value="3">Reunion</option>
+                                <option value="4">Cita medica</option>
+                                <option value="5">Diligencia Personal</option>
+                                <option value="6">Salida</option>
+                                </select></td></tr>
+                                </textarea></td></tr>
+                    
+                                <tr><td>Registrar: </td>
+                                <td><button type="button" onclick="Alert">Guardar Novedad!
+                                </button></td></tr> 
+                    </table>
+                            <script >
+                                var dt = new Date() ;
+                                document.getElementById("datetime").innerHTML = dt.toLocaleString();
+                            </script>  
+                             
+                </section>
+                    <aside>Información institucional <!--información barra lateral-->
+                        <p>
+                            <a href="https://amazonia-teamfactory.com/blog/20-consejos-para-mejorar-la-salud-en-el-trabajo/"> Tips salud en el trabajo </a> <br>
+                            <br><a href="https://youtu.be/VhvUnHiysQY/"> Pausas activas </a>
+                        </p>                    
+                    </aside>
+            </div>
+            
+            <footer>Contactenos:
+
+                 <p style = "font-family:arial;">
+                    Compañia MF2D3J</p>
+                <p style = "font-family:arial;">
+                    Dirección: calle falsa 123 // Telefono: 3152351452 // Email: mf2d3j@gmail.com  </p>
+                <p style = "font-family:arial;">
+            </footer>
+                <form action="">
+ 
+    </div>
+</body>     

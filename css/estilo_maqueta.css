@@ -1,0 +1,181 @@
+@media screen and (min-width:900px){
+
+*{
+    margin: 3px;;
+    padding: 3px;;
+
+}
+
+
+img{
+    width: 90px;
+    height: 75px;
+    align-self:left;
+    
+}
+
+#contenedor{
+    width:70%;
+    height: 70vh;
+    background: #598381;
+    padding: 0.5em;
+    
+}
+header{
+    height: 10%;
+    width:94% ;
+    background: #6096BA;
+    border-radius: 1em; /*borde redondeado*/
+    padding: 1em; /* Espacio entre el borde y la letra*/
+    color: white; /* Color de letra*/
+    font-size: x-large;
+    text-align: left /*Centra texto*/
+   
+    
+}
+
+nav{
+    height: 8%;
+    background:#C5F4E0;
+    border-radius: 1em;
+    color:white;
+    padding: 0.5em;
+    margin: 1em;
+
+}
+
+#contenido{
+    height:30%;
+    text-align: left;
+    font-size:x-large;
+}   
+
+section{
+    height: 90%;
+    width: 50%;
+    background-color:beige;
+    border-radius: 1em;
+    padding: 0.5em;
+    margin: 0.5em;
+    float:left ;
+}
+
+aside{
+    height:90% ;
+    width:42% ;
+    background: beige;
+    border-radius:1em;
+    margin: 0.5em;
+    padding: 0.5em;
+    float:right;
+    text-align: center;
+}
+
+table{
+    text-align: left;
+}
+
+footer{
+    height:15% ;
+    width:96%;
+    background:beige;
+    padding: 0.5em;
+    margin: 1em;
+    border-radius: 1em;
+    
+    
+}   
+}
+
+@media screen and (max-width:768px){  
+
+    *{
+        margin: 3px;;
+        padding: 3px;;
+    
+    }
+
+    img{
+        width: 70px;
+        height: 55px;
+        align-self:flex-end
+        
+    }
+
+    #contenedor{
+    width:80%;
+    height: 65vh;
+    background: #598381;
+    padding: 0.5em;
+}
+
+    header{
+    height: 9%;
+    width:86% ;
+    background: #6096BA;
+    border-radius: 1em; /*borde redondeado*/
+    padding: 1em; /* Espacio entre el borde y la letra*/
+    color: white; /* Color de letra*/
+    font-size:medium;
+    text-align: center /*Centra texto*/
+    }
+
+    #contenido{
+        height:30%;
+        text-align: left;
+        font-size:  x-large;
+    }  
+    nav{
+        height: 6%;
+        width:86% ;
+        background:#C5F4E0;
+        border-radius: 1em;
+        color:white;
+        padding: 0.5em;
+        margin: 1em;
+    
+    }
+    
+    #contenido{
+        height:50%;
+        text-align: left;
+        font-size:large;
+    }   
+    
+    section{
+        height: 50%;
+        width: 88%;
+        background-color:beige;
+        border-radius: 1em;
+        padding: 0.5em;
+        margin: 0.5em;
+        float:left ;
+    }
+    
+    aside{
+        height:30% ;
+        width:88% ;
+        background: beige;
+        border-radius:1em;
+        margin: 0.5em;
+        padding: 0.5em;
+        float:left;
+        text-align: left;
+    }
+    
+    table{
+        text-align: left;
+    }
+    
+    footer{
+        height:11% ;
+        width:82%;
+        background:beige;
+        padding: 1em;
+        margin: 1em;
+        border-radius: 1em;
+        
+        
+    }   
+    
+}

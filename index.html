@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Inicio</title>
+    <link rel="icon" type="image/png" href="/css/Logo (1).ico" />
+    <link rel="stylesheet" href="css/login.css">
+    
+    <style>
+        input::-webkit-input-placeholder {
+            color:white;
+        }
+        input::-moz-placeholder {
+            /* Mozilla Firefox 19+ */
+            color: white;
+        }
+        input:-moz-placeholder {
+            /* Mozilla Firefox 4 to 18 */
+            color: white;
+        }
+        input:-ms-input-placeholder {
+            /* Internet Explorer 10-11 */
+            color: white;
+        }
+    </style>
+</head>
+<script>
+    function usrpas(){
+    if (document.login.username.value=="admin" && document.login.password.value=="1234")
+   { alert("Bienvenido.");
+   window.location="Home_Administrador.html"
+    }
+    else {alert("Error en Usuario o Contraseña. Intenta de nuevo.")}}
+    document.oncontextmenu=new Function("return false");
+</script>
+<body>
+    <form name=login>
+        <div id="login-box">
+            <h1>MF2D3J</h1>
+            <div class="form">
+                <div class="item">
+                    <input type="text" placeholder="Usuario" name="username">
+                </div>
+
+                <div class="item">
+                    <input type="password" placeholder="Contraseña" name="password">
+                </div>
+            </div>
+            <button onclick="usrpas()">Iniciar</button>
+        </div>
+    </form>
+</body>
+
+<footer>
+  <div id="message-box" > Bienvenido, Que tengas un Excelente Día</div>
+</footer>
+
+</html>

@@ -1,0 +1,53 @@
+.button1, .button2, .button3, .button4 {
+    color: black;
+    background-color: whitesmoke;
+    text-align: center;
+    padding: 4px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.button1:hover {
+    background-color: cadetblue;
+}
+
+.button2:hover {
+    background-color: cadetblue;
+}
+
+.button3:hover {
+    background-color: cadetblue;
+}
+
+.button4:hover {
+    background-color: cadetblue;
+}
+
+.button1:active {
+    background-color: cornflowerblue;
+}
+
+.button2:active {
+    background-color: cornflowerblue;
+}
+
+.button3:active {
+    background-color: cornflowerblue;
+}
+
+.button4:active {
+    background-color: cornflowerblue;
+}
+
+header {
+    text-align: center;
+}
+
+#section {
+    width: 60%;
+    
+}
+
+#aside {
+    width: 20%;
+}
