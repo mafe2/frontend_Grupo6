@@ -6,10 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="css/Estilos_Reporte.css">
     <title>Informe Empleados</title>
+    <script src="js/cerrarSesion.js"></script>
 </head>
 <!--id sirve para modificarl los elementos-->
 <!--name es el nombre de la variable que va a enviar el formulario-->
 <body id="contenedor">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.1.7/dist/sweetalert2.all.min.js"></script>
     <div>
             <img src="logo.jpg">
             <aside><h1 style="text-align:center; color:white;">MF2D3J</h1>
@@ -34,9 +36,10 @@
             <path d="M6 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm-5 6s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H1zM11 3.5a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 0 1h-4a.5.5 0 0 1-.5-.5zm.5 2.5a.5.5 0 0 0 0 1h4a.5.5 0 0 0 0-1h-4zm2 3a.5.5 0 0 0 0 1h2a.5.5 0 0 0 0-1h-2zm0 3a.5.5 0 0 0 0 1h2a.5.5 0 0 0 0-1h-2z"/>
             </svg> Generar Reporte</button>
             
-        <button class="button5" onclick="location.href='index.html'"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-door-closed-fill" viewBox="0 0 16 16">
+        <button class="button5" onclick="cerrarSesion()"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-door-closed-fill" viewBox="0 0 16 16">
             <path d="M12 1a1 1 0 0 1 1 1v13h1.5a.5.5 0 0 1 0 1h-13a.5.5 0 0 1 0-1H3V2a1 1 0 0 1 1-1h8zm-2 9a1 1 0 1 0 0-2 1 1 0 0 0 0 2z"/>
             </svg>Cerrar Sesión</button> 
+       
     </nav>
     <b style="color:white;">Fecha: 2021-09-19</b>
     <div>
