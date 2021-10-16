@@ -7,21 +7,21 @@ var downPdf = document.getElementById("renderPdf");
                   var contentWidth = canvas.width;
                   var contentHeight = canvas.height;
 
-                  //一页pdf显示html页面生成的canvas高度;
+                  // Una página de pdf muestra la altura del lienzo generado por la página html;
                   var pageHeight = contentWidth / 595.28 * 841.89;
-                  //未生成pdf的html页面高度
+                  
                   var leftHeight = contentHeight;
-                  //pdf页面偏移
+                  //desplazamiento de página pdf
                   var position = 0;
-                  //a4纸的尺寸[595.28,841.89]，html页面生成的canvas在pdf中图片的宽高
+                  //El tamaño del papel a4 [595.28,841.89], el ancho y alto del lienzo generado por la página html en el pdf
                   var imgWidth = 555.28;
                   var imgHeight = 555.28/contentWidth * contentHeight;
 
                   var pageData = canvas.toDataURL('image/jpeg', 1.0);
 
                   var pdf = new jsPDF('', 'pt', 'a4');
-                  //有两个高度需要区分，一个是html页面的实际高度，和生成pdf的页面高度(841.89)
-                  //当内容未超过pdf一页显示的范围，无需分页
+                  //Hay dos alturas para distinguir, una es la altura real de la página html y la altura de la página que genera el pdf (841.89)
+                  //Cuando el contenido no excede el rango mostrado en una página del pdf, no hay necesidad de paginación
                   if (leftHeight < pageHeight) {
                       pdf.addImage(pageData, 'JPEG', 20, 0, imgWidth, imgHeight );
                   } else {
@@ -29,7 +29,7 @@ var downPdf = document.getElementById("renderPdf");
                           pdf.addImage(pageData, 'JPEG', 20, position, imgWidth, imgHeight)
                           leftHeight -= pageHeight;
                           position -= 841.89;
-                          //避免添加空白页
+                          //Evite agregar páginas en blanco
                           if(leftHeight > 0) {
                               pdf.addPage();
                           }
