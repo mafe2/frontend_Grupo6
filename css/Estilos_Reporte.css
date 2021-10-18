@@ -154,6 +154,9 @@
     .button5:active {
         background-color: cornflowerblue;
     }
+    h2{
+        color: white;
+    }
 }
 
 
@@ -307,6 +310,9 @@
         .button5:active {
             background-color: cornflowerblue;
         }
+        h2{
+            color: white;
+        }
 }
 
 @media screen and (max-width:400px) {
@@ -456,6 +462,9 @@
         }
         .button5:active {
             background-color: cornflowerblue;
+        }
+        h2{
+            color: white;
         }
    
 }
