@@ -10,52 +10,170 @@
     <script type="text/javascript" src="./js/html2canvas.js"></script>
     <script type="text/javascript" src="./js/jsPdf.debug.js"></script>
     <script type="text/javascript" src="./jquery/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript" src="./js/datetimeInforme.js"></script>
     <script>
             $(function(){$("#cargar").click(function () {
                 var endpoint = "http://localhost:8080/usuario";
+                var endpointN = "http://localhost:8080/novedad/";
+                var linea;
                 $.get(endpoint, function (datos) {
                     var i;
-                    $("#cuerpotabla").html("");
-                    for (i = 0; i < datos.length; i++) {
-                        var linea = `<tr><td>` + usuario.id +
-                            `<tr><td>` + nombre_usuario.id +
-                            `</td><td>` + usuario.cedula +
-                            `</td><td>` + usuario.nombre +
-                            `</td><td>` + usuario.apellido +
-                            `</td><td>` + usuario.cargo +
-                            /*`</td><td>` + usuario.horario +
-                            `</td><td>` + usurario.diasLaborales +*/
-                            `</td><td>` + usurario.administrador +
-                            `</td></tr>`;
+                    var j;
+                    $("#tablaDatos").html("");
+                        var linea = `<sidebar>
+                                        <fieldset>
+                                            <table><legend>Informe de funcionario: <b>`;
+                        for (i = 0; i < datos.length; i++) {
+                            linea += datos[i].nombre + ` `+ datos[i].apellido + `</b></legend>`+
+                                    `<tr><td></td><td style="color:white">1</td></tr>`+
+                                `<tr><td><b>Id Usuario:` + `</b></td>`+
+                                    `<td>`+ datos[i].id +  `</td></tr>`+
+                                `<tr><td><b>Nombre de Usuario: </b></td>` +
+                                    `<td>`+ datos[i].nombre_usuario +  `</td></tr>`+
+                                `<tr><td><b>Cedula:</b></td>` + `</b></td>`+ 
+                                    `<td>`+datos[i].cedula +`</td></tr>`+
+                                `<tr><td><b>Cargo:</b></td>`+
+                                    `<td>` + datos[i].cargo + `</td></tr>`+
+                                `<tr><td><b>Dias Laborales:</b></td>` +
+                                    `<td>`;                 
+                            linea+=datos[i].diasLaborales
+                            /*for (dia in usuario.diasLaborales) {
+                                linea += dia + `,`;
+                            }*/
+                            linea+= `</td></tr>` + 
+                                    `<tr><td><b>Horario:</b></td>`+ 
+                                        `<td>`+ datos[i].horario + `</td></tr>` +
+                                    `<tr><td style="color:white">1</td>
+                                        <td style="color:white">1</td></tr>
+                                    <tr><td style="color:white">1</td>
+                                        <td style="color:white"></td></tr>
+                                    <legend>Informe de funcionario: <b>
+                                    </table></fieldset></sidebar>`;
+                            linea+= `<aside id="asideinfo">
+                                        <fieldset>
+                                        <table id="tablaInfo">
+                                        <legend>Info.</legend>`;
+                            
+                            $.get(endpointN+datos[i].id, function (novs) {
+                                console.log('novs');
+                                console.log(novs);
+                                if(novs==null){
+                                    console.log("hola vacio novedades");
+                                }
+                                
+                                else{
+                                    if ((Array.from(novs)).length ==0){
+                                        
+                                        linea+= `<tr><td><b>Fecha y hora:</b></td>`
+                                        linea+=     `<td>`+ novs.fecha_hora + `</td>
+                                            <tr><td><b>Novedad:</b></td>`+
+                                                `<td>`+ novs.novedad+ `</td>
+                                            <tr><td><b>observacion:</b></td>` +
+                                                `<td>`+ novs.observacion + `</td>`;
+                                        
+                                    }
+                                    else{
+                                        for (j = 0; j < novs.length; j++) {
+                                        linea+= `<tr><td><b>Fecha y hora:</b></td>`
+                                        linea+=     `<td>`+ novs[j].fecha_hora + `</td>
+                                            <tr><td><b>Novedad:</b></td>`
+                                                `<td>`+ novs[j].novedad+ `</td>
+                                            <tr><td><b>observacion:</b></td>` +
+                                                `<td>`+ novs[j].observacion + `</td>`;
+                                        }
+                                    }
+                                    linea+=         `</table>
+                                                </fieldset>
+                                            </aside>`;
+                                    console.log(linea)
+                                }
+                            })
+                        }
                         console.log(linea);
                         /*$("#cuerpotabla").append(linea);*/
-                    }
+                    });
                 });
-            })})
+            });
         
             $(function(){$("#buscar").click(function () {
                 var id = $("#idusuario").val();
                 var endpoint = "http://localhost:8080/usuario/" + id;
-                $("#cuerpotabla").html("");
-                $.get(endpoint, function (usuario) {
-                    var linea = `<tr><td>` + usuario.id +
-                        `<tr><td>` + nombre_usuario.id +
-                        `</td><td>` + usuario.cedula +
-                        `</td><td>` + usuario.nombre +
-                        `</td><td>` + usuario.apellido +
-                        `</td><td>` + usuario.cargo +
-                        /*`</td><td>` + usuario.horario +
-                        `</td><td>` + usurario.dias_laborales +*/
-                        `</td><td>` + usurario.administrador +
-                        `</td></tr>`;
-                    console.log(linea);
-                    /*$("#cuerpotabla").append(linea);*/
+                var endpointN = "http://localhost:8080/novedad/" + id;
+                var i;
+                var j;
+                $("#tablaDatos").html("");
+                $.get(endpoint, function (datos) {
+                    console.log(datos);
+                    var linea = `<sidebar>
+                                        <fieldset>
+                                            <table><legend>Informe de funcionario: <b>`;
+                        linea += datos.nombre + ` `+ datos.apellido + `</b></legend>`+
+                                    `<tr><td></td><td style="color:white">1</td></tr>`+
+                                `<tr><td><b>Id Usuario:` + `</b></td>`+
+                                    `<td>`+ datos.id +  `</td></tr>`+
+                                `<tr><td><b>Nombre de Usuario: </b></td>` +
+                                    `<td>`+ datos.nombre_usuario +  `</td></tr>`+
+                                `<tr><td><b>Cedula:</b></td>` + `</b></td>`+ 
+                                    `<td>`+datos.cedula +`</td></tr>`+
+                                `<tr><td><b>Cargo:</b></td>`+
+                                    `<td>` + datos.cargo + `</td></tr>`+
+                                `<tr><td><b>Dias Laborales:</b></td>` +
+                                    `<td>`;
+                        linea += datos.diasLaborales;                
+                        /*for (dia in usuario.diasLaborales) {
+                                linea += dia + `,`;
+                        }*/
+                        linea+=     `</td></tr>` + 
+                                `<tr><td><b>Horario:</b></td>`+ 
+                                    `<td>`+ datos.horario + `</td></tr>` +
+                                `<tr><td style="color:white">1</td>
+                                    <td style="color:white">1</td></tr>
+                                <tr><td style="color:white">1</td>
+                                    <td style="color:white"></td></tr>
+                                <legend>Informe de funcionario: <b>
+                                    </table>
+                                </fieldset>
+                                </sidebar>`;
+                                linea+= `<aside id="asideinfo">
+                                        <fieldset>
+                                        <table id="tablaInfo">
+                                        <legend>Info.</legend>`;
+                            $.get(endpointN, function (novs) {
+                                console.log((Array.from(novs)).length);
+                                if ((Array.from(novs)).length ==0){
+                                    linea+= `<tr><td><b>Fecha y hora:</b></td>`
+                                    linea+=     `<td>`+ novs.fecha_hora + `</td>
+                                            <tr><td><b>Novedad:</b></td>`+
+                                                `<td>`+ novs.novedad+ `</td>
+                                            <tr><td><b>observacion:</b></td>` +
+                                                `<td>`+ novs.observacion + `</td>`;
+                                    console.log(linea)
+                                }
+                                else{
+                                    for (j= 0; j < novs.length; j++) {
+                                        linea+= `<tr><td><b>Fecha y hora:</b></td>`
+                                        linea+=     `<td>`+ novs[j].fecha_hora + `</td>
+                                                <tr><td><b>Novedad:</b></td>`+
+                                                    `<td>`+ novs[j].novedad+ `</td>
+                                                <tr><td><b>observacion:</b></td>` +
+                                                    `<td>`+ novs[j].observacion + `</td>`;
+                                        console.log(linea)
+                                    }
+                                }
+                                linea+=         `</table>
+                                            </fieldset>
+                                        </aside>`;
+                                console.log(linea);
+                            })
+                console.log(linea);
+                /*$("#cuerpotabla").append(linea);*/
+               
                 });
-            })})
+            });
+        });
     </script>
 </head>
-<!--id sirve para modificarl los elementos-->
-<!--name es el nombre de la variable que va a enviar el formulario-->
+
 <body id="contenedor">
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.1.7/dist/sweetalert2.all.min.js"></script>
     <div>
@@ -97,107 +215,19 @@
             </svg>Cargar Todos Empleados</button>
             
     </div>
-    <b style="color:white;">Fecha: 2021-09-19</b>
-    <div>
-    <sidebar>
-            <fieldset>
-                <table>
-                    <legend>Informe de funcionario: <b>Daniel Amaya</b></legend>
-                    <!--Se debe el id ser unico para acceder a los valores que captura-->
-                    <!--Lista Desplegable-->
-                    <tr><td></td>
-                        <td style="color:white">1</td></tr>
-                    <tr><td><b>Nombre de Usuario: </b></td>
-                        <td>Daniel.Amaya</td></tr>
-                    <tr><td><b>Cedula:</b></td>
-                        <td>1025848488</td>
-                    <tr><td><b>Cargo:</b></td>
-                        <td>Ingeniero Desarrollo</td>
-                    <tr><td><b>Dias Laborales:</b></td>
-                        <td>L,M,Mi,J,V</td>
-                    <tr><td><b>Horario:</b></td>
-                        <td>08:00 - 12:00</td>
-                        <td>14:00 - 17:00</td>
-                    <tr><td style="color:white">1</td>
-                        <td style="color:white">1</td></tr>
-                    <tr><td style="color:white">1</td>
-                        <td style="color:white"></td></tr>
-                </table>
-            </fieldset>
-    </sidebar>
-    <aside id="asideinfo">
-            <fieldset>
-                <table>
-                    <legend>Info.</legend>
-                    <tr><td><b>Hora Llegada:</b></td>
-                        <td>07:50</td>
-                    <tr><td><b>Hora Salida Almuerzo:</b></td>
-                            <td>12:10</td>
-                    <tr><td><b>Hora Regreso Almuerzo:</b></td>
-                        <td>13:50</td>
-                    <tr><td><b>Salida a Cita Medica:</b></td>
-                        <td>-</td>
-                    <tr><td><b>Regreso de Cita Medica:</b></td>
-                        <td>-</td>
-                    <tr><td><b>Regreso de Cita Medica:</b></td>
-                        <td>-</td>
-                    <tr><td><b>Salida de la oficina:</b></td>
-                        <td>18:00</td>
-                    <tr><td><b>Observaciones:</b> 
-                        <td>Permiso solicitado 2021-09-02</td>
-                </table>
-            </fieldset>
-    </aside>
-    <sidebar>
-        <fieldset>
-            <table>
-                <legend>Informe de funcionario: <b>Maria Pinzon</b></legend>
-                <!--Se debe el id ser unico para acceder a los valores que captura-->
-                <!--Lista Desplegable-->
-                <tr><td style="color:white">1</td>
-                    <td style="color:white">1</td></tr>
-                <tr><td><b>Nombre de Usuario:</b></td>
-                    <td>Maria.Pinzon</td></tr>
-                <tr><td><b>Cedula</b></td>
-                    <td>1052323424</td>
-                <tr><td><b>Cargo:</b></td>
-                    <td>Ingeniera QA</td>
-                <tr><td><b>Dias Laborales:</b></td>
-                    <td>L,M,Mi,J,V</td>
-                <tr><td><b>Horario:</b></td>
-                    <td>08:00 - 12:00</td>
-                    <td>14:00 - 17:00</td>
-                <tr><td style="color:white">1</td>
-                    <td style="color:white">1</td></tr>
-                <tr><td style="color:white">1</td>
-                    <td style="color:white">1</td></tr>
-            </table>
-        </fieldset>
-    </sidebar>
-    <aside id="asideinfo">
-            <fieldset>
-                <table>
-                    <legend>Info.</legend>
-                    <tr><td><b>Hora Llegada:</b></td>
-                        <td>07:40</td>
-                    <tr><td><b>Hora Salida Almuerzo:</b></td>
-                            <td>12:30</td>
-                    <tr><td><b>Hora Regreso Almuerzo:</b></td>
-                        <td>14:00</td>
-                    <tr><td><b>Salida a Cita Medica:</b></td>
-                        <td>-</td>
-                    <tr><td><b>Regreso de Cita Medica:</b></td>
-                        <td></td>
-                    <tr><td><b>Regreso de Cita Medica:</b></td>
-                        <td></td>
-                    <tr><td><b>Salida de la oficina:</b></td>
-                        <td>18:50</td>
-                    <tr><td><b>Observaciones:</b></td>
-                        <td></td>
-                </table>
-            </fieldset>
-    </aside>
+    <script>
+        var today = new Date();
+    </script>
+    <p><span id="datetime" style="color: white;"></span></p>
+    <script>
+        var dt = new Date();
+        document.getElementById("datetime").innerHTML = dt.toLocaleString();
+    </script>
+
+    <div id="tablaDatos" name="tablaDatos">
+    
     </div>
+    
     <footer>
             <p><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-building" viewBox="0 0 16 16">
                 <path fill-rule="evenodd" d="M14.763.075A.5.5 0 0 1 15 .5v15a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5V14h-1v1.5a.5.5 0 0 1-.5.5h-9a.5.5 0 0 1-.5-.5V10a.5.5 0 0 1 .342-.474L6 7.64V4.5a.5.5 0 0 1 .276-.447l8-4a.5.5 0 0 1 .487.022zM6 8.694 1 10.36V15h5V8.694zM7 15h2v-1.5a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 .5.5V15h2V1.309l-7 3.5V15z"/>
@@ -215,5 +245,4 @@
     </footer>
     <script type="text/javascript" src="./js/renderPdf.js"></script>    
 </body>
-
 </html>
