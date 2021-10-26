@@ -1,11 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <script src="jquery/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript" src="./js/registroNovedad.js"></script>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="css/estilo_maqueta.css"> <!--enlaza a hoja de estilos-->
    <!-- <img class="original" src="E:\MAFE\UNAB\Programacion\Modulo 3\semana 3\Sprint2 (1)\Sprint2 (1)\logo.jpg"> -->
+   
    <title>Registro_Novedad</title> 
    
     
@@ -78,22 +81,28 @@
                     <table class="table table-dark table-sm">
                         <div>
                                 <legend>Registro de Novedad</legend>
-                                <p> fecha: <span id="datetime"></span> </p> 
+                                <p> fecha: <span id="datetime" name="datetime"></span> </p> 
                         </div>
-                        <tr><td> Novedad</td>
+                        <tr><td>Id</td>
+                            <td><input type="number" name="id" id="id"></td>
+
+                            <td> Novedad</td>
                             <td><select name="Novedad" id="Novedad">
-                                <option value="0">Ingreso</option>
-                                <option value="1">Almuerzo</option>
-                                <option value="2">Baño</option>
-                                <option value="3">Reunion</option>
-                                <option value="4">Cita medica</option>
-                                <option value="5">Diligencia Personal</option>
-                                <option value="6">Salida</option>
+                                <option value="Ingreso">Ingreso</option>
+                                <option value="Almuerzo">Almuerzo</option>
+                                <option value="Baño">Baño</option>
+                                <option value="Reunion">Reunion</option>
+                                <option value="Cita medica">Cita medica</option>
+                                <option value="Diligencia Personal">Diligencia Personal</option>
+                                <option value="Salida">Salida</option>
                                 </select></td></tr>
                                 </textarea></td></tr>
-                    
+                            
+                            <td>Observaciones</td>
+                                <td><input type="text" id="observacion" name="observacion"></td>
+
                                 <tr><td>Registrar: </td>
-                                <td><button type="button" onclick="Alert">Guardar Novedad!
+                                <td><input type="submit" id="guardar" name="guardar" value="Guardar Novedad!">
                                 </button></td></tr> 
                     </table>
                             <script >
